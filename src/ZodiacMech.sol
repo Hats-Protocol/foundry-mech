@@ -46,7 +46,7 @@ contract ZodiacMech is SafeStorage, Mech, IAvatar {
         }
     }
 
-    function nonce() public view override returns (uint256) {
+    function getNonce() public view override returns (uint256) {
         // Here we use the nonce variable of the SafeStorage contract rather than that of the Mech contract.
         // This is for keeping the nonce sequence of Safes that got upgraded to ZodiacMechs.
         return safeNonce;

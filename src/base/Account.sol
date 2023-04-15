@@ -23,7 +23,7 @@ abstract contract Account is BaseAccount {
         IEntryPoint(0x0576a174D229E3cFA37253523E645A78A0C91B57);
 
     /// @inheritdoc BaseAccount
-    function nonce() public view virtual override returns (uint256) {
+    function getNonce() public view virtual override returns (uint256) {
         return _nonce;
     }
 
@@ -67,7 +67,7 @@ abstract contract Account is BaseAccount {
      */
     function _validateAndUpdateNonce(
         UserOperation calldata userOp
-    ) internal virtual override {
+    ) internal virtual {
         require(_nonce++ == userOp.nonce, "Invalid nonce");
     }
 }
